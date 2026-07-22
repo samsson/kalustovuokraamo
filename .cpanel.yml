@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    # cPanel runs these tasks (as one shell script) from the repository root on
+    # every "Deploy" / push. Replace CPANELUSER below with your cPanel account
+    # username — DEPLOYPATH must be an ABSOLUTE path (cPanel requirement).
+    - export DEPLOYPATH=/home/CPANELUSER/public_html
+    - /bin/mkdir -p "$DEPLOYPATH"
+    # Publish the holding page as the site's index.
+    - /bin/cp -f kalustovuokraamo-tulossa.html "$DEPLOYPATH/index.html"
